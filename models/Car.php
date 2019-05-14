@@ -23,8 +23,8 @@
             cartype_day_rental,
             cartype_day_multiplier,
             cartype_km_multiplier,
-            cartype_img' .
-            'FROM 
+            cartype_img
+            FROM 
             cartypes';
 
         $stmt = $this->conn->prepare($query);
