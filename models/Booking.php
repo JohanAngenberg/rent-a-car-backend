@@ -69,7 +69,7 @@
         $this->booking_cartype = htmlspecialchars(strip_tags($this->booking_cartype));
         $this->booking_start = htmlspecialchars(strip_tags($this->booking_start));
         $this->booking_initial_odo = htmlspecialchars(strip_tags($this->booking_initial_odo));;
-        $this->returned = htmlspecialchars(strip_tags($this->returned));
+        $this->returned = $this->returned;
 
         $stmt->bindParam(':customer_ssn', $this->customer_ssn);
         $stmt->bindParam(':booking_licenceplate', $this->booking_licenceplate);
