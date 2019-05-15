@@ -38,30 +38,10 @@
             );
 
             array_push($bookings_arr['data'],$row_item);
-            
+
         }
         echo json_encode($bookings_arr);
 
     } else {
         echo json_encode(array('message' => 'no bookings found'));
     }
-
-
-
-
-
-
-
-
-
-
-booking_id
-customer_ssn
-booking_licenceplate
-booking_start
-booking_end
-booking_initial_odo
-booking_final_odo
-booking_distance
-booking_price
-booking_returned
