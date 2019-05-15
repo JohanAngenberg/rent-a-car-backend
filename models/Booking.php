@@ -51,7 +51,7 @@
             booking_cartype,
             booking_start,
             booking_initial_odo,
-            booking_returned,
+            booking_returned
             )
             values (
                 :customer_ssn,
