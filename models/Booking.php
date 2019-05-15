@@ -45,14 +45,22 @@
 
     public function create() {
 
-        $query = 'INSERT INTO bookings 
-            SET
-                customer_ssn = :customer_ssn,
-                booking_licenceplate = :booking_licenceplate,
-                booking_cartype = :booking_cartype,
-                booking_start = :booking_start,
-                booking_initial_odo = :booking_initial_odo,
-                booking_returned = :booking_returned';
+        $query = 'INSERT INTO bookings(
+            customer_ssn,
+            booking_licenceplate,
+            booking_cartype,
+            booking_start,
+            booking_initial_odo,
+            booking_returned,
+            )
+            values(
+                :customer_ssn,
+                :booking_licenceplate,
+                :booking_cartype,
+                :booking_start,
+                :booking_initial_odo,
+                :booking_returned
+            )';
 
         $stmt = $this->conn->prepare($query);
         
@@ -70,7 +78,7 @@
         $stmt->bindParam(':booking_initial_odo', $this->booking_initial_odo);
         $stmt->bindParam(':booking_returned', $this->booking_returned);
 
-        if($stmt->execute()){
+        if($stmt->execute()) {
             return true;
         } else {
             
