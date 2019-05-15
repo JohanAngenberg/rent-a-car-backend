@@ -1,5 +1,5 @@
 <?php
-    class Car {
+    class Customer {
         private $conn;
         private $table = 'customers';
 
