@@ -34,8 +34,8 @@
 
             array_push($cars_arr['data'],$row_item);
 
-            echo json_encode($cars_arr);
         }
+        echo json_encode($cars_arr);
 
     } else {
         echo json_encode(array('message' => 'no cars found'));
