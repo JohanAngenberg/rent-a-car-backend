@@ -76,9 +76,7 @@
         $stmt->bindParam(':booking_cartype', $this->booking_cartype);
         $stmt->bindParam(':booking_start', $this->booking_start);
         $stmt->bindParam(':booking_initial_odo', $this->booking_initial_odo);
-        $stmt->bindParam(':returned', $this->booking_returned);
-        
-        $stmt->execute();
+        $stmt->bindParam(':returned', $this->returned);
 
         if($stmt->execute()) {
             return true;
