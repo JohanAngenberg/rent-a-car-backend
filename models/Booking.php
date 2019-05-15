@@ -50,16 +50,14 @@
             booking_licenceplate,
             booking_cartype,
             booking_start,
-            booking_initial_odo,
-            returned
+            booking_initial_odo
             )
             values (
                 :customer_ssn,
                 :booking_licenceplate,
                 :booking_cartype,
                 :booking_start,
-                :booking_initial_odo,
-                :returned
+                :booking_initial_odo
             )';
 
         $stmt = $this->conn->prepare($query);
@@ -69,14 +67,12 @@
         $this->booking_cartype = htmlspecialchars(strip_tags($this->booking_cartype));
         $this->booking_start = htmlspecialchars(strip_tags($this->booking_start));
         $this->booking_initial_odo = htmlspecialchars(strip_tags($this->booking_initial_odo));;
-        $this->returned = $this->returned;
 
         $stmt->bindParam(':customer_ssn', $this->customer_ssn);
         $stmt->bindParam(':booking_licenceplate', $this->booking_licenceplate);
         $stmt->bindParam(':booking_cartype', $this->booking_cartype);
         $stmt->bindParam(':booking_start', $this->booking_start);
         $stmt->bindParam(':booking_initial_odo', $this->booking_initial_odo);
-        $stmt->bindParam(':returned', $this->returned);
 
         if($stmt->execute()) {
             return true;
