@@ -53,7 +53,7 @@
             booking_initial_odo,
             booking_returned,
             )
-            values(
+            values (
                 :customer_ssn,
                 :booking_licenceplate,
                 :booking_cartype,
