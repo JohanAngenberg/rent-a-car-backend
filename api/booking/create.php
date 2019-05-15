@@ -20,7 +20,7 @@
     $booking->booking_cartype = $data->booking_cartype;
     $booking->booking_start = $data->booking_start;
     $booking->booking_initial_odo = $data->booking_initial_odo;
-    $booking->booking_returned = $data->booking_returned;
+    $booking->returned = $data->returned;
 
     if($booking->create()) {
         echo json_encode(array('message:' => 'Post Created'));
