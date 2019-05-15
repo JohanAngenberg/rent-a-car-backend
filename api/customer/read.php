@@ -23,7 +23,7 @@
             extract($row);
 
             $row_item = array(
-                'ssn' => $cartype_ssn,
+                'ssn' => $customer_ssn,
                 'firstname' => $customer_firstname,
                 'lastname' => $customer_lastname
             );
