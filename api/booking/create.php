@@ -13,7 +13,7 @@
 
     $booking = new Booking($db);
 
-    $data = json_decode(file_get_content('php://input'));
+    $data = json_decode(file_get_contents('php://input'));
 
     $booking->customer_ssn = $data->customer_ssn;
     $booking->booking_licenceplate = $data->booking_licenceplate;
