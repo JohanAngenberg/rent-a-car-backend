@@ -45,7 +45,7 @@
 
     public function create() {
 
-        $query = 'INSERT INTO ' . $this->table . '
+        $query = 'INSERT INTO bookings 
             SET
                 customer_ssn = :customer_ssn,
                 booking_licenceplate = :booking_licenceplate,
