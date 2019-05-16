@@ -40,8 +40,7 @@
                 booking_price,
                 returned
             FROM bookings
-            RIGHT JOIN 
-                cartypes
+            RIGHT OUTER JOIN cartypes
             ON
                 bookings.booking_cartype=cartypes.cartype_name  
                 '
