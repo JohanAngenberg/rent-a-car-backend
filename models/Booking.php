@@ -45,7 +45,7 @@
                 cartype_km_multiplier
 
             FROM bookings
-            RIGHT OUTER JOIN cartypes
+            RIGHT JOIN cartypes
             ON
                 bookings.booking_cartype=cartypes.cartype_name  
                 '
