@@ -31,14 +31,19 @@
                 booking_id,
                 customer_ssn,
                 booking_licenceplate,
-                booking_cartype,
                 booking_start,
                 booking_end,
                 booking_initial_odo,
                 booking_final_odo,
                 booking_distance,
                 booking_price,
-                returned
+                returned,
+                booking_cartype,
+                cartype_kmprice,
+                cartype_day_rental,
+                cartype_day_multiplier,
+                cartype_km_multiplier
+
             FROM bookings
             RIGHT OUTER JOIN cartypes
             ON
