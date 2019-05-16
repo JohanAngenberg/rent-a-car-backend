@@ -14,6 +14,13 @@
         public $booking_distance;
         public $booking_price;
         public $returned;
+        public $cartype_id;
+        public $cartype_kmprice;
+        public $cartype_day_rental;
+        public $cartype_day_multiplier ;
+        public $cartype_km_multiplier;
+    
+
 
         public function __construct($db){
             $this->conn = $db;

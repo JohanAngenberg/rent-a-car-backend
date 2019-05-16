@@ -34,6 +34,11 @@
                 'distance' => $booking_distance,
                 'price' => $booking_price,
                 'returned' => $booking_returned
+                'carid' => $cartype_id
+                'kmprice' => $cartype_kmprice
+                'baseDayRental' => $cartype_day_rental
+                'dayMultiplier' => $cartype_day_multiplier 
+                'kmMultiplier' => $cartype_km_multiplier
 
             );
 
