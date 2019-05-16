@@ -32,8 +32,12 @@
                 booking_distance,
                 booking_price,
                 returned
-            FROM 
-                bookings'
+            FROM bookings
+            RIGHT JOIN 
+                cartypes
+            ON
+                bookings.booking_cartype=cartypes.cartype_name  
+                '
             ;
 
         $stmt = $this->conn->prepare($query);
