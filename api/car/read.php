@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: *');
-    header('Content-Type: application/json');
+    header('Content-Type: application/json, Origin, X-Requested-With, Content-Type, Accept');
 
     include_once '../../config/db.php';
     include_once '../../models/Car.php';
