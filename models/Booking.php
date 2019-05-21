@@ -60,7 +60,7 @@
 
     public function create() {
 
-        $query = 'INSERT INTO bookings
+        $query = 'INSERT INTO bookings(
             customer_ssn,
             booking_licenceplate,
             booking_cartype,
