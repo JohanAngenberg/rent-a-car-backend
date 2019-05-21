@@ -100,22 +100,15 @@
     
     public function update() {
 
-        $query = 'UPDATE bookings (
-            booking_end,
-            booking_final_odo,
-            booking_distance,
-            booking_price,
-            returned
-            )
-            values (
-                :booking_end,
-                :booking_final_odo,
-                :booking_distance,
-                :booking_price,
-                :returned
-            )
+        $query = 'UPDATE bookings 
+            SET
+            booking_end = :booking_end,
+            booking_final_odo = :booking_final_odo,
+            booking_distance = :booking_distance,
+            booking_price = :booking_price,
+            returned = :returned
             WHERE
-             booking_id = :booking_id';
+            booking_id = :booking_id';
 
         $stmt = $this->conn->prepare($query);
 
