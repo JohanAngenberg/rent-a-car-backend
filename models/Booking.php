@@ -12,6 +12,7 @@
         public $booking_initial_odo;
         public $booking_final_odo;
         public $booking_distance;
+        public $booking_duration;
         public $booking_price;
         public $returned;
         public $cartype_id;
@@ -36,6 +37,7 @@
                 booking_initial_odo,
                 booking_final_odo,
                 booking_distance,
+                duration,
                 booking_price,
                 returned,
                 booking_cartype,
@@ -106,6 +108,7 @@
             booking_final_odo = :booking_final_odo,
             booking_distance = :booking_distance,
             booking_price = :booking_price,
+            duration = :duration,
             returned = :returned
             WHERE
             booking_id = :booking_id';
@@ -117,6 +120,7 @@
         $this->booking_final_odo = $this->booking_final_odo;
         $this->booking_distance = $this->booking_distance;
         $this->booking_price = $this->booking_price;
+        $this->duration = $this->duration;
         $this->returned = $this->returned;
 
         $stmt->bindParam(':booking_id', $this->booking_id);
@@ -124,6 +128,7 @@
         $stmt->bindParam(':booking_final_odo', $this->booking_final_odo);
         $stmt->bindParam(':booking_distance', $this->booking_distance);
         $stmt->bindParam(':booking_price', $this->booking_price);
+        $stmt->bindParam(':duration', $this->duration);
         $stmt->bindParam(':returned', $this->returned);
 
         if($stmt->execute()) {

@@ -36,7 +36,8 @@
     $booking->booking_final_odo = $data->booking_final_odo;
     $booking->booking_distance = $data->booking_distance;
     $booking->booking_price = $data->booking_price;
-    $booking->booking_returned = $data->booking_returned;
+    $booking->duration = $data->duration;
+    $booking->returned = $data->returned;
 
     if($booking->update()) {
         echo json_encode(array('message:' => 'Post Updated'));
