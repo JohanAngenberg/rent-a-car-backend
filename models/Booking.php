@@ -114,7 +114,7 @@
                 :returned
             )
             WHERE
-             booking_id = :booking_id)';
+             booking_id = :booking_id';
 
         $stmt = $this->conn->prepare($query);
 
