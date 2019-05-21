@@ -97,4 +97,47 @@
             return false;
         }
     }
+    
+    public function update() {
+
+        $query = 'UPDATE bookings (
+            booking_end
+            booking_final_odo
+            booking_distance
+            booking_price
+            returned)
+            values (
+                :booking_end,
+                :booking_final_odo,
+                :booking_distance,
+                :booking_price,
+                :returned
+            )
+            WHERE
+             booking_id = :booking_id)';
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->booking_id = $this->booking_id;
+        $this->booking_end = htmlspecialchars(strip_tags($this->customer_ssn));
+        $this->booking_final_odo = $this->booking_initial_odo;
+        $this->booking_distance = htmlspecialchars(strip_tags($this->booking_cartype));
+        $this->booking_price = htmlspecialchars(strip_tags($this->booking_start));
+        $this->booking_returned = $this->booking_licenceplate;
+
+        $stmt->bindParam(':booking_id', $this->booking_id);
+        $stmt->bindParam(':booking_end', $this->booking_end);
+        $stmt->bindParam(':booking_final_odo', $this->booking_final_odo);
+        $stmt->bindParam(':booking_distance', $this->booking_distance);
+        $stmt->bindParam(':booking_price', $this->booking_price);
+        $stmt->bindParam(':booking_returned', $this->booking_returned);
+
+        if($stmt->execute()) {
+            return true;
+        } else {
+            
+            printf("Error: %s.\n ", $stmt->error);
+            return false;
+        }
+    }
     }
