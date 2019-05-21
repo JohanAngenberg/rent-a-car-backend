@@ -38,8 +38,8 @@
     $booking->booking_price = $data->booking_price;
     $booking->booking_returned = $data->booking_returned;
 
-    if($booking->create()) {
-        echo json_encode(array('message:' => 'Post Created'));
+    if($booking->update()) {
+        echo json_encode(array('message:' => 'Post Updated'));
     } else {
-        echo json_encode(array('message:' => 'Post Not Created'));
+        echo json_encode(array('message:' => 'Post Not Updated'));
     }
