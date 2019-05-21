@@ -106,25 +106,25 @@
             booking_final_odo = :booking_final_odo,
             booking_distance = :booking_distance,
             booking_price = :booking_price,
-            returned = :booking_returned
+            returned = :returned
             WHERE
             booking_id = :booking_id';
 
         $stmt = $this->conn->prepare($query);
 
         $this->booking_id = $this->booking_id;
-        $this->booking_end = htmlspecialchars(strip_tags($this->customer_ssn));
+        $this->booking_end = htmlspecialchars(strip_tags($this->booking_end));
         $this->booking_final_odo = $this->booking_final_odo;
-        $this->booking_distance = $this->distance;
-        $this->booking_price = $this->booking_start;
-        $this->booking_returned = $this->returned;
+        $this->booking_distance = $this->booking_distance;
+        $this->booking_price = $this->booking_price;
+        $this->returned = $this->returned;
 
         $stmt->bindParam(':booking_id', $this->booking_id);
         $stmt->bindParam(':booking_end', $this->booking_end);
         $stmt->bindParam(':booking_final_odo', $this->booking_final_odo);
         $stmt->bindParam(':booking_distance', $this->booking_distance);
         $stmt->bindParam(':booking_price', $this->booking_price);
-        $stmt->bindParam(':booking_returned', $this->booking_returned);
+        $stmt->bindParam(':returned', $this->returned);
 
         if($stmt->execute()) {
             return true;
