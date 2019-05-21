@@ -60,14 +60,15 @@
 
     public function create() {
 
-        $query = 'INSERT INTO bookings (
+        $query = 'INSERT INTO bookings 
+            SET
             customer_ssn,
             booking_licenceplate,
             booking_cartype,
             booking_start,
             booking_initial_odo
             )
-            values (
+            values 
                 :customer_ssn,
                 :booking_licenceplate,
                 :booking_cartype,
@@ -101,11 +102,12 @@
     public function update() {
 
         $query = 'UPDATE bookings (
-            booking_end
-            booking_final_odo
-            booking_distance
-            booking_price
-            returned)
+            booking_end,
+            booking_final_odo,
+            booking_distance,
+            booking_price,
+            returned
+            )
             values (
                 :booking_end,
                 :booking_final_odo,
