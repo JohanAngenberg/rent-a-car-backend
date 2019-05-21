@@ -69,7 +69,7 @@
             booking_start,
             booking_initial_odo
             )
-            values 
+            values (
                 :customer_ssn,
                 :booking_licenceplate,
                 :booking_cartype,
