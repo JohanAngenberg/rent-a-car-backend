@@ -106,7 +106,7 @@
             booking_final_odo = :booking_final_odo,
             booking_distance = :booking_distance,
             booking_price = :booking_price,
-            returned = :returned
+            returned = :booking_returned
             WHERE
             booking_id = :booking_id';
 
