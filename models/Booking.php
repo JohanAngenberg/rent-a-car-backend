@@ -114,10 +114,10 @@
 
         $this->booking_id = $this->booking_id;
         $this->booking_end = htmlspecialchars(strip_tags($this->customer_ssn));
-        $this->booking_final_odo = $this->booking_initial_odo;
-        $this->booking_distance = htmlspecialchars(strip_tags($this->booking_cartype));
-        $this->booking_price = htmlspecialchars(strip_tags($this->booking_start));
-        $this->booking_returned = $this->booking_licenceplate;
+        $this->booking_final_odo = $this->booking_final_odo;
+        $this->booking_distance = $this->distance;
+        $this->booking_price = $this->booking_start;
+        $this->booking_returned = $this->returned;
 
         $stmt->bindParam(':booking_id', $this->booking_id);
         $stmt->bindParam(':booking_end', $this->booking_end);
