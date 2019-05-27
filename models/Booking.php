@@ -80,7 +80,7 @@
                 cartype_km_multiplier
 
             FROM bookings
-            WHERE customer_ssn = :customer_ssn,
+            WHERE customer_ssn = :customer_ssn
             LEFT JOIN cartypes
             ON
                 bookings.booking_cartype=cartypes.cartype_name  
