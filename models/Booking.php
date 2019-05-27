@@ -60,6 +60,44 @@
         return $stmt;
     }
 
+    public function readCustomer(){
+        $query = 'SELECT 
+                booking_id,
+                customer_ssn,
+                booking_licenceplate,
+                booking_start,
+                booking_end,
+                booking_initial_odo,
+                booking_final_odo,
+                booking_distance,
+                duration,
+                booking_price,
+                returned,
+                booking_cartype,
+                cartype_kmprice,
+                cartype_day_rental,
+                cartype_day_multiplier,
+                cartype_km_multiplier
+
+            FROM bookings
+            WHERE customer_ssn = :customer_ssn,
+            LEFT JOIN cartypes
+            ON
+                bookings.booking_cartype=cartypes.cartype_name  
+                '
+            ;
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->customer_ssn = htmlspecialchars(strip_tags($this->customer_ssn));
+
+        $stmt->bindParam(':customer_ssn', $this->customer_ssn);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
     public function create() {
 
         $query = 'INSERT INTO bookings(
