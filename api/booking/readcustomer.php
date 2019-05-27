@@ -9,13 +9,13 @@
     $db = $database->connect();
 
 
-    $car = new Booking($db);
+    $booking = new Booking($db);
 
     $data = json_decode(file_get_contents('php://input'));
 
     $booking->customer_ssn = $data->customer_ssn;
 
-    $result = $car->read();
+    $result = $booking->readCustomer();
 
     $count = $result->rowCount();
 
