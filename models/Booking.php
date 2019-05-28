@@ -64,7 +64,7 @@
         $query = 'SELECT 
                 booking_id,
                 customer_ssn,
-                booking_licenceplate,
+                booking_licencepl   ate,
                 booking_start,
                 booking_end,
                 booking_initial_odo,
