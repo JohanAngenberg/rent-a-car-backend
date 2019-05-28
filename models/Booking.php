@@ -64,7 +64,7 @@
         $query = 'SELECT 
                 booking_id,
                 customer_ssn,
-                booking_licencepl   ate,
+                booking_licenceplate,
                 booking_start,
                 booking_end,
                 booking_initial_odo,
@@ -83,7 +83,7 @@
             LEFT JOIN cartypes
             ON
                 bookings.booking_cartype=cartypes.cartype_name  
-                    
+
             WHERE customer_ssn = :customer_ssn'
             ;
 
