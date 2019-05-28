@@ -84,14 +84,12 @@
             ON
                 bookings.booking_cartype=cartypes.cartype_name  
 
-            WHERE customer_ssn = :customer_ssn'
+            WHERE customer_ssn = ?'
             ;
 
         $stmt = $this->conn->prepare($query);
 
-        $this->customer_ssn = htmlspecialchars(strip_tags($this->customer_ssn));
-
-        $stmt->bindParam(':customer_ssn', $this->customer_ssn);
+        $stmt->bindParam(1, $this->customer_ssn);
 
         $stmt->execute();
 
